@@ -1,15 +1,19 @@
 def plusOne(digits: list[int]) -> list[int]:
-    first_str = ''
-    for digit in digits:
-        first_str += str(digit)
+    digits = digits[::-1]
+    isNine = True
+    i = 0
 
-    added_numer = int(first_str) + 1
-    added_string = str(added_numer)
+    while isNine:
+        if i < len(digits):
+            if digits[i] == 9:
+                digits[i] = 0
+                i += 1
+            else:
+                digits[i] += 1
+                isNine = False
+        else:
+            digits.append(1)
+            isNine = False
+    return digits[::-1]
 
-    output_list = []
-    for letter in added_string:
-        output_list.append(int(letter))
-
-    return output_list
-
-print(plusOne([9]))
+print(plusOne([9,9]))
