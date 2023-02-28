@@ -10,11 +10,10 @@ def reverseString(s: list[str]) -> None:
             s[left], s[right] = s[right], s[left]
             left += 1
             right -= 1
-
     return s
 
 
-
-
 mystr = ["H","a","n","n","a","h"]
+
+
 print(reverseString(mystr))
