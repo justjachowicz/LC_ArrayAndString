@@ -1,5 +1,5 @@
 def minSubArrayLen(target: int, nums: list[int]) -> int:
-    left, total = 0
+    left, total = 0, 0
     result = float("inf")
 
     for r in range(len(nums)):
